@@ -3,6 +3,8 @@ import DateNav from "./components/DateNav";
 import NameJob from "./components/addRenameJob/NameJob";
 import DisplayThisMonthHours from "./components/DisplayThisMonthHours";
 import { useSpring, animated } from "react-spring";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 function FirstPage({ onAddedTime, nuke }) {
   const [jobName, setJobName] = useState(null);
@@ -172,16 +174,18 @@ function FirstPage({ onAddedTime, nuke }) {
   const jobDisplay = (
     <div className="jobDispl">
       {jobName && jobName.length > 1 && (
-        <span className="material-icons jobArrow" onClick={backName}>
-          arrow_back_ios
-        </span>
+        <ArrowBackIosIcon
+          className="material-icons jobArrow"
+          onClick={backName}
+        ></ArrowBackIosIcon>
       )}
 
       <h4 id="jN">{curJob}</h4>
       {jobName && jobName.length > 1 && (
-        <span className="material-icons jobArrow" onClick={fowardName}>
-          arrow_forward_ios
-        </span>
+        <ArrowForwardIosIcon
+          className="material-icons jobArrow"
+          onClick={fowardName}
+        ></ArrowForwardIosIcon>
       )}
     </div>
   );
@@ -205,7 +209,6 @@ function FirstPage({ onAddedTime, nuke }) {
       )}
       {jobName ? jobDisplay : <NameJob catchName={catchName} />}
       {addJob && <NameJob catchName={catchName} />}
-
       {jobName && (
         <animated.div style={springProps}>
           <DateNav

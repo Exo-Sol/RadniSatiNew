@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FirstPage from "./FirstPage";
 import SecondPage from "./seconPage/SecondPage";
 import Page2 from "./components/Page2";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter, Route, Link } from "react-router-dom";
 import SwipeableRoutes from "react-swipeable-routes";
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
     <>
       {/* conditional rendering so it dosent display table when there is no entry, this happens at the very start of use */}
       {retrivedObj ? (
-        <Router>
+        <HashRouter>
           <div className="App">
             <SwipeableRoutes>
               <Route
@@ -52,9 +52,9 @@ const App = () => {
               />
             </SwipeableRoutes>
           </div>
-        </Router>
+        </HashRouter>
       ) : (
-        <Router>
+        <HashRouter>
           <div className="App">
             <SwipeableRoutes>
               <Route
@@ -70,7 +70,7 @@ const App = () => {
               <Route path="/second" render={(props) => <Page2 />} />
             </SwipeableRoutes>
           </div>
-        </Router>
+        </HashRouter>
       )}
     </>
   );

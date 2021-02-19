@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { useSpring, animated, useTransition } from "react-spring";
+import clockBuilder from "../Icons/clockBuilder.png";
+import eject from "../Icons/eject.png";
+// import EjectIcon from "@material-ui/icons/Eject";
+// import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
+
 import "../styles/mainStyle.css";
 
 const HList = ({ clickHour, selectedTimes, catchD }) => {
@@ -45,6 +50,15 @@ const HList = ({ clickHour, selectedTimes, catchD }) => {
     backgroundColor: "#fafad2",
   };
 
+  const iconStyle = {
+    height: "40px",
+    width: "40px",
+    fontWeight: "300",
+    fontSize: "37px",
+    textAlign: "center",
+  };
+
+  /////////////////////////////////////////////////////
   for (let i = 7; i <= 24; i++) {
     if (i == selectedTimes.startTime) {
       arr.push(
@@ -88,24 +102,23 @@ const HList = ({ clickHour, selectedTimes, catchD }) => {
         item && (
           <animated.div className="hourSelect" key={key} style={props}>
             {arr}
-            <span
-              className="material-icons numberList hButton"
+
+            <img
+              src={eject}
+              className="hButton material-icons numberList "
               onClick={hClick}
               style={resetSyle}
-            >
-              eject
-            </span>
+            ></img>
           </animated.div>
         )
     )
   ) : (
-    <span
+    <img
+      src={clockBuilder}
       className="material-icons numberList hButton"
       onClick={hClick}
       style={resetSyle}
-    >
-      query_builder
-    </span>
+    ></img>
   );
 };
 

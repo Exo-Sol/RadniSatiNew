@@ -5,6 +5,8 @@ import HList from "../components/HList";
 import "../styles/mainStyle.css";
 
 import PopUp from "./PopUp";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const DateNav = ({ catchData, curJob, catchD }) => {
   const [clickCount, setClickCount] = useState(0);
@@ -61,15 +63,19 @@ const DateNav = ({ catchData, curJob, catchD }) => {
   /////////////JSX variables/////////////////////////////////
 
   const backArrow = (
-    <span className="material-icons timeArrow" onClick={dayBack}>
-      arrow_back_ios
-    </span>
+    <ArrowBackIosIcon
+      style={{ fontSize: "50px", fontWeight: 100, opacity: 0.7 }}
+      className="material-icons timeArrow"
+      onClick={dayBack}
+    ></ArrowBackIosIcon>
   );
 
   const fwdArrow = (
-    <span className="material-icons timeArrow" onClick={dayFoward}>
-      arrow_forward_ios
-    </span>
+    <ArrowForwardIosIcon
+      style={{ fontSize: "50px", fontWeight: 100, opacity: 0.7 }}
+      className="material-icons timeArrow"
+      onClick={dayFoward}
+    ></ArrowForwardIosIcon>
   );
   /////////////////////////////////////////////////////////
   const clickHour = (e) => {
@@ -160,7 +166,6 @@ const DateNav = ({ catchData, curJob, catchD }) => {
           value={workHours}
           onChange={hoursChange}
           style={{ display: "block" }}
-          autoFocus={true}
           onKeyDown={(evt) =>
             ["e", "E", "+", "-", "."].includes(evt.key) && evt.preventDefault()
           }

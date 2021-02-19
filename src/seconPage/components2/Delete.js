@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import deleteIcon from "../../Icons/deleteIcon.png";
 import { useSpring, animated } from "react-spring";
 
 const Delete = ({ relevantShifts, onAddedTime }) => {
@@ -70,13 +71,12 @@ const Delete = ({ relevantShifts, onAddedTime }) => {
 
   return (
     <div className="deleteDiv">
-      <span
+      <img
+        src={deleteIcon}
         className="material-icons icons"
         id="deleteIcon"
         onClick={firstClickDel}
-      >
-        delete
-      </span>
+      ></img>
       {clickedDel && (
         <animated.input
           type="number"

@@ -38,6 +38,10 @@
   align-items: center;
 }
 
+#dropIcon {
+  height: 40px;
+  opacity: 0.9;
+}
 .monthList {
   font-size: 25px;
   background-color: azure;
@@ -120,7 +124,7 @@ li {
   bottom: 5px;
 
   #deleteIcon {
-    color: bisque;
+    opacity: 0.8;
   }
   #delPlaceholder {
     margin: 0;

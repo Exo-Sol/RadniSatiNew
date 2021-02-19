@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MainDiv from "./components2/MainDiv";
 import Delete from "./components2/Delete";
 import NukeStorage from "./components2/NukeStorage";
+import dropdown from "../Icons/dropdown.png";
 import "./styles2/styles.css";
 
 const SecondPage = ({ change, onAddedTime }) => {
@@ -110,7 +111,8 @@ const SecondPage = ({ change, onAddedTime }) => {
       <div className="curJob">{curJob}</div>
       <ul className="monthWhole">
         <li className="material-icons icons" onClick={dropDown}>
-          arrow_drop_down_circle <p id="dropMonths">Mjesec {month}</p>
+          <img src={dropdown} id="dropIcon" />{" "}
+          <p id="dropMonths">Mjesec {month}</p>
         </li>
         {toggleDropdown &&
           newMonthArr.map((ele, ind) => (
