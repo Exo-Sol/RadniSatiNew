@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Heebo&family=Montserrat:ital@1&display=swap");
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url(../fonts/Montserrat-Italic.ttf) format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
