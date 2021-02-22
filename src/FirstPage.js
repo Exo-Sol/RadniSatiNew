@@ -197,7 +197,7 @@ function FirstPage({ onAddedTime, nuke }) {
   ///////////////////////////////////////////////////////////////////////////
   return (
     <div className="FirstPage">
-      {jobName && (
+      {jobName && !addJob && (
         <div>
           <button id="addJob" onClick={addJobClick}>
             Dodaj posao

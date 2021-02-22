@@ -37,7 +37,7 @@
   }
   #addJob {
     position: absolute;
-    top: 5px;
+    top: 10px;
     left: 5px;
     font-size: 15px;
     padding: 5px;
@@ -48,7 +48,7 @@
   }
   #removeJob {
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 5px;
     font-size: 15px;
     padding: 5px;
@@ -330,5 +330,11 @@
     width: 100%;
     font-size: 14px;
     animation: glow 6s ease-in-out infinite;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .hButton {
+    color: azure !important;
   }
 }
