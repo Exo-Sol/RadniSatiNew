@@ -1,12 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Heebo&family=Montserrat:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+@font-face {
+  font-family: "Montserrat-Italic";
+  src: local("Montserrat-Italic"), url("../fonts/Montserrat-Italic.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat-Italic", sans-serif;
   background-color: black;
   color: azure;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
 }
 
 *:focus {
@@ -63,6 +73,7 @@
   left: 5px;
   font-size: 15px;
   padding: 5px;
+  color: #87ecf0;
   border-top: 2px #a31e1e;
   border-left: 2px;
   border-radius: 15px;
@@ -207,8 +218,9 @@
   margin: auto;
   background-color: #3be294;
   color: black;
-  font-family: "Heebo", sans-serif;
+  font-family: "Heebo", "Montserrat-Italic", sans-serif;
   border: none;
+  font-weight: 600;
 }
 
 #delete {
@@ -216,7 +228,8 @@
   margin: auto;
   background-color: #e03f3f;
   color: black;
-  font-family: "Heebo", sans-serif;
+  font-family: "Heebo", "Montserrat-Italic", sans-serif;
+  font-weight: 600;
 }
 
 .hButton {
