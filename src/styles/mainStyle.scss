@@ -229,7 +229,7 @@
     margin-top: 5px;
   }
 
-  #saveJob {
+  .saveJob {
     margin-top: 5px;
     font-size: 25px;
     height: 35px;
@@ -238,7 +238,27 @@
     border-top-right-radius: 50%;
     border: none;
     background-color: rgb(47, 47, 47);
+    color: #3be294;
   }
+}
+
+#backAddJob {
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 0%;
+  border-top-right-radius: 0%;
+  color: #f32727;
+  border: 4px rgb(180, 17, 17);
+  font-size: 21px;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 8px;
+  height: 34px;
+}
+
+#nazivPosla {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .displInfoMain {
@@ -343,11 +363,5 @@
     width: 100%;
     font-size: 14px;
     animation: glow 6s ease-in-out infinite;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .info {
-    color: crimson !important;
   }
 }
