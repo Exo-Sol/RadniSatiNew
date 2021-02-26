@@ -73,7 +73,6 @@
   left: 5px;
   font-size: 15px;
   padding: 5px;
-  color: #87ecf0;
   border-top: 2px #a31e1e;
   border-left: 2px;
   border-radius: 15px;
@@ -473,8 +472,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .hButton {
-    color: azure !important;
+  .info {
+    color: crimson !important;
   }
 }
 /*# sourceMappingURL=mainStyle.css.map */

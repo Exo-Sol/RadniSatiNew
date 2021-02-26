@@ -152,8 +152,12 @@
       "react-app"
     ]
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cordova-android": "^9.0.0"
+  },
   "cordova": {
-    "platforms": []
+    "platforms": [
+      "android"
+    ]
   }
 }

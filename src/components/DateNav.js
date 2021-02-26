@@ -17,7 +17,6 @@ const DateNav = ({ catchData, curJob, catchD }) => {
     const dateObj = new Date(),
       dayNames = ["Ned", "Pon", "Uto", "Sri", "Cet", "Pet", "Sub"];
     if (clickCount !== 0) {
-      console.log("dohvaceno");
       dateObj.setDate(new Date().getDate() + count);
     }
 
@@ -119,6 +118,12 @@ const DateNav = ({ catchData, curJob, catchD }) => {
       workHours === undefined
     ) {
       alert("Netocno uneseni sati");
+    } else if (selectedTimes.startTime && !selectedTimes.endTime) {
+      alert("Unesite pocetak pa kraj smjene, unijeli ste samo pocetak");
+      setSelectedTimes({
+        startTime: null,
+        endTime: null,
+      });
     } else if (workHours !== 0) {
       catchData(selectedDay, workHours, selectedTimes);
 

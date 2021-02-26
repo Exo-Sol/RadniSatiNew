@@ -31,7 +31,7 @@ function FirstPage({ onAddedTime, nuke }) {
   ///Retrivin Jobs from local storage on initial render
   useEffect(() => {
     const savedJobs = window.localStorage.getItem("jobs");
-    console.log(savedJobs);
+
     if (savedJobs) {
       if (savedJobs.includes(",")) {
         const array = savedJobs.split(",");
@@ -128,9 +128,7 @@ function FirstPage({ onAddedTime, nuke }) {
       let objForSaving = JSON.stringify(retrivedObj);
       localStorage.setItem(dateObj.year, objForSaving);
     } else if (dateObj.year in localStorage) {
-      console.log(retrivedObj);
       let x = new Array();
-      console.log(typeof x);
 
       x.push(retrivedObj);
 
@@ -141,18 +139,16 @@ function FirstPage({ onAddedTime, nuke }) {
     } else {
       let x = [];
       let storageArr = JSON.stringify(finalObj);
-      console.log(storageArr);
+
       localStorage.setItem(dateObj.year, storageArr);
     }
     setChangeOfH(!chageOfH);
     /// indicate change for second page
     onAddedTime();
-    console.log("to mi treba tommy");
   };
   ///////////////////////////////////////////////////////////////////////////////////////
   const backName = () => {
     const curIndex = jobName.findIndex((ele) => ele === curJob);
-    console.log(curIndex);
 
     if (curIndex - 1 < 0) {
       setCurJob(jobName[jobName.length - 1]);

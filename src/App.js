@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FirstPage from "./FirstPage";
 import SecondPage from "./seconPage/SecondPage";
 import Page2 from "./components/Page2";
@@ -10,12 +10,12 @@ const App = () => {
   const [change, setChange] = useState(false);
   // when you "nuke" delete all data, to delete jobs enered in state also
   const [nukeAll, setNukeAll] = useState(false);
+  /// dark theme detect toggle
 
   const onAddedTime = (nuke = false) => {
     setChange(!change);
     if (nuke) {
       setNukeAll(!nukeAll);
-      console.log();
     }
   };
   //  const FirstPage = <FirstPage onAddedTime={onAddedTime} />;
