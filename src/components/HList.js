@@ -45,9 +45,9 @@ const HList = ({ clickHour, selectedTimes, catchD }) => {
   };
 
   const resetSyle = {
-    border: "gray 1px solid",
-    color: "black",
-    backgroundColor: "#fafad2",
+    border: "#f0ffff 1px solid",
+
+    backgroundColor: "azure",
   };
 
   const iconStyle = {

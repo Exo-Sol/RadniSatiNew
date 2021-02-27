@@ -6,7 +6,7 @@ import { useSpring, animated } from "react-spring";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
-function FirstPage({ onAddedTime, nuke, useDark }) {
+function FirstPage({ onAddedTime, nuke }) {
   const [jobName, setJobName] = useState(null);
   const [curJob, setCurJob] = useState(null);
   const [addJob, setAddJob] = useState(false);
@@ -207,7 +207,7 @@ function FirstPage({ onAddedTime, nuke, useDark }) {
           </button>
         </div>
       )}
-      {jobName ? jobDisplay : <NameJob catchName={catchName} />}
+      {jobName ? jobDisplay : <NameJob catchName={catchName} name={jobName} />}
       {addJob && <NameJob catchName={catchName} exit={exitAddJob} />}
       {jobName && (
         <animated.div style={springProps}>
@@ -221,7 +221,6 @@ function FirstPage({ onAddedTime, nuke, useDark }) {
       {jobName && displaySwitch && (
         <DisplayThisMonthHours curJob={curJob} change={chageOfH} />
       )}
-      <div>this is {useDark ? "true" : "false"}</div>
     </div>
   );
 }

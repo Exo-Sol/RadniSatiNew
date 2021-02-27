@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NameJob = ({ catchName, exit }) => {
+const NameJob = ({ catchName, exit, name }) => {
   const [jobName, setJobName] = useState("");
 
   const inputName = (e) => {
@@ -15,15 +15,18 @@ const NameJob = ({ catchName, exit }) => {
   const backClick = () => {
     exit();
   };
+  console.log(name);
 
   return (
     <div className="jobName">
       <form action="" onSubmit={onSubmit}>
         <h3 id="nazivPosla">Unesi naziv posla</h3>
         <div className="miniFlex">
-          <button className="saveJob" id="backAddJob" onClick={backClick}>
-            {"x"}
-          </button>
+          {name !== null && (
+            <button className="saveJob" id="backAddJob" onClick={backClick}>
+              {"x"}
+            </button>
+          )}
           <input
             type="text"
             placeholder="Tu"

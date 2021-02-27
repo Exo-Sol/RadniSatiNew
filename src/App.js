@@ -23,9 +23,6 @@ const App = () => {
   const year = dateObj.getFullYear();
   const retrivedObj = localStorage.getItem(year);
 
-  const useDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  console.log(useDark);
-
   return (
     <>
       {/* conditional rendering so it dosent display table when there is no entry, this happens at the very start of use */}
@@ -38,7 +35,6 @@ const App = () => {
                 render={(props) => (
                   <FirstPage
                     {...props}
-                    useDark={useDark}
                     onAddedTime={onAddedTime}
                     nuke={nukeAll}
                   />
