@@ -84,6 +84,23 @@
           animation: growDown 200ms ease-in-out forwards;
 }
 
+.mainDivContainer {
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.mainDivContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.mainDivContainer {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
 .mainDiv {
   display: -ms-grid;
   display: grid;
@@ -120,7 +137,7 @@ li {
 }
 
 .title {
-  background-color: #d6ba02;
+  background-color: #fffc50;
   color: black;
   font-weight: 700;
   font-size: 14px;
@@ -134,6 +151,9 @@ li {
   padding-bottom: 3px;
   margin-top: 10px;
   border-radius: 20px;
+  font-size: 14px;
+  border-bottom-right-radius: 0%;
+  border-top-right-radius: 0%;
 }
 
 .startColor {
@@ -173,5 +193,22 @@ li {
   position: absolute;
   bottom: 0;
   right: -100vw;
+}
+
+.calculate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50vh;
 }
 /*# sourceMappingURL=styles.css.map */

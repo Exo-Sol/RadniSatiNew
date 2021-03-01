@@ -3,6 +3,7 @@ import MainDiv from "./components2/MainDiv";
 import Delete from "./components2/Delete";
 import NukeStorage from "./components2/NukeStorage";
 import dropdown from "../Icons/dropdown.png";
+import Calculate from "../seconPage/components2/Calculate";
 import "./styles2/styles.css";
 
 const SecondPage = ({ change, onAddedTime }) => {
@@ -21,6 +22,7 @@ const SecondPage = ({ change, onAddedTime }) => {
   const [linkEffect, setLinkEffect] = useState(false);
   const [month, setMonth] = useState(dateObj.getMonth() + 1);
   const [relevantShifts, setRelevantShifts] = useState([]);
+  const [calcSall, setCalcSall] = useState(false);
 
   ///////////////////////////////////////////////////////////////////
   const retriveArr = JSON.parse(localStorage.getItem(dateObj.getFullYear()));
@@ -102,8 +104,12 @@ const SecondPage = ({ change, onAddedTime }) => {
     setToggleDropdown(false);
   };
 
-  return (
-    <div>
+  const calculateSallary = () => {
+    setCalcSall(!calcSall);
+  };
+
+  return calcSall ? (
+    <div className="mainDivContainer">
       <div className="curJob">{curJob}</div>
       <ul className="monthWhole">
         <li className="material-icons icons" onClick={dropDown}>
@@ -117,10 +123,14 @@ const SecondPage = ({ change, onAddedTime }) => {
             </li>
           ))}
       </ul>
-      {!toggleDropdown && <MainDiv data={relevantShifts} />}
+      {!toggleDropdown && (
+        <MainDiv data={relevantShifts} calc={calculateSallary} />
+      )}
       <Delete relevantShifts={relevantShifts} onAddedTime={onAddedTime} />
       <NukeStorage onAddedTime={onAddedTime} />
     </div>
+  ) : (
+    <Calculate back={calculateSallary} cur={curJob} />
   );
 };
 
