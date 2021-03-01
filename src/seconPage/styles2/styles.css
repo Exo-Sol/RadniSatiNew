@@ -213,4 +213,8 @@ li {
           align-items: center;
   height: 50vh;
 }
+
+.calculate .calcSheet {
+  margin-bottom: 10px;
+}
 /*# sourceMappingURL=styles.css.map */

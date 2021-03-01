@@ -30,12 +30,26 @@ const Calculate = ({ back, cur, totHours, change }) => {
 
   return (
     <div className="calculate">
-      <div style={{ color: "white" }}>{cur}</div>
+      <div className="calcSheet">
+        Posao: <p style={{ color: "#ff8b42", display: "inline" }}> {cur}</p>
+      </div>
       {retrivedPay ? (
         <>
-          <div>Zaradjena placa : {parseInt(retrivedPay) * totHours}</div>
-          <div>Ukupno sati na poslu: {totHours}</div>
-          <div>Placa po satu : {retrivedPay}</div>
+          <div className="calcSheet">
+            Zaradjena placa :{" "}
+            <p style={{ color: "#1EE6BE", display: "inline" }}>
+              {" "}
+              {parseInt(retrivedPay) * totHours}
+            </p>
+          </div>
+          <div className="calcSheet">
+            Odradjeni sati u mjesecu:{" "}
+            <p style={{ color: "#FF5A82", display: "inline" }}>{totHours}</p>{" "}
+          </div>
+          <div className="calcSheet">
+            Placa po satu :{" "}
+            <p style={{ color: "#F5CD00", display: "inline" }}>{retrivedPay}</p>{" "}
+          </div>
           <br></br>
           <button onClick={goBack}> Nazad</button>
           <button onClick={changeSallary}>Promijeni placu za {cur}</button>{" "}
