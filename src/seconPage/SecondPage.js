@@ -23,6 +23,7 @@ const SecondPage = ({ change, onAddedTime }) => {
   const [month, setMonth] = useState(dateObj.getMonth() + 1);
   const [relevantShifts, setRelevantShifts] = useState([]);
   const [calcSall, setCalcSall] = useState(false);
+  const [totHours, setTotHours] = useState(0);
 
   ///////////////////////////////////////////////////////////////////
   const retriveArr = JSON.parse(localStorage.getItem(dateObj.getFullYear()));
@@ -104,11 +105,12 @@ const SecondPage = ({ change, onAddedTime }) => {
     setToggleDropdown(false);
   };
 
-  const calculateSallary = () => {
+  const calculateSallary = (number) => {
     setCalcSall(!calcSall);
+    setTotHours(number);
   };
 
-  return calcSall ? (
+  return !calcSall ? (
     <div className="mainDivContainer">
       <div className="curJob">{curJob}</div>
       <ul className="monthWhole">
@@ -130,7 +132,12 @@ const SecondPage = ({ change, onAddedTime }) => {
       <NukeStorage onAddedTime={onAddedTime} />
     </div>
   ) : (
-    <Calculate back={calculateSallary} cur={curJob} />
+    <Calculate
+      back={calculateSallary}
+      cur={curJob}
+      totHours={totHours}
+      change={change}
+    />
   );
 };
 

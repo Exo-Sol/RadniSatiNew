@@ -30,7 +30,7 @@ const TemplateChild = ({
   };
 
   const calcSallary = () => {
-    calc();
+    calc(last);
   };
 
   return (

@@ -137,12 +137,13 @@ li {
 }
 
 .title {
-  background-color: #fffc50;
-  color: black;
-  font-weight: 700;
-  font-size: 14px;
-  padding-top: 3px;
+  background-color: #161614;
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  padding-top: 4px;
   padding-bottom: 4px;
+  margin-bottom: 10px;
 }
 
 #totalLi {
@@ -193,6 +194,7 @@ li {
   position: absolute;
   bottom: 0;
   right: -100vw;
+  opacity: 0.7;
 }
 
 .calculate {
