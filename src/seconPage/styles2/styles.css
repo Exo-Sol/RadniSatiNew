@@ -211,10 +211,36 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 40px;
   height: 50vh;
 }
 
 .calculate .calcSheet {
   margin-bottom: 10px;
+}
+
+.calculate #earnd {
+  font-size: 20px;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.calculate .calcButton {
+  margin-top: 30px;
+  padding: 5px;
+  border-radius: 10%;
+}
+
+.calculate .bContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50px;
+}
+
+.calculate .bContainer .calcButton2 {
+  padding: 10px;
+  margin: 15px;
+  border-radius: 15%;
 }
 /*# sourceMappingURL=styles.css.map */

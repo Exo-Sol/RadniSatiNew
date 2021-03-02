@@ -29,53 +29,68 @@ const Calculate = ({ back, cur, totHours, change }) => {
   };
 
   return (
-    <div className="calculate">
-      <div className="calcSheet">
-        Posao: <p style={{ color: "#ff8b42", display: "inline" }}> {cur}</p>
-      </div>
-      {retrivedPay ? (
-        <>
-          <div className="calcSheet">
-            Zaradjena placa :{" "}
-            <p style={{ color: "#1EE6BE", display: "inline" }}>
+    <>
+      <div className="calculate">
+        <div className="calcSheet">
+          Posao: <p style={{ color: "#ff8b42", display: "inline" }}> {cur}</p>
+        </div>
+        {retrivedPay ? (
+          <>
+            <div className="calcSheet" id="earnd">
+              Zarađena plaća:{" "}
+              <p style={{ color: "#1EE6BE", display: "inline" }}>
+                {parseInt(retrivedPay) * totHours}
+              </p>
+            </div>
+            <div className="calcSheet">
+              Odrađeni sati u mjesecu:{" "}
+              <p style={{ color: "#FF5A82", display: "inline" }}>{totHours}</p>{" "}
+            </div>
+            <div className="calcSheet">
+              Plaća po satu :{" "}
+              <p style={{ color: "#F5CD00", display: "inline" }}>
+                {retrivedPay}
+              </p>{" "}
+            </div>
+            <br></br>
+            <button onClick={goBack} className="calcButton">
               {" "}
-              {parseInt(retrivedPay) * totHours}
-            </p>
-          </div>
-          <div className="calcSheet">
-            Odradjeni sati u mjesecu:{" "}
-            <p style={{ color: "#FF5A82", display: "inline" }}>{totHours}</p>{" "}
-          </div>
-          <div className="calcSheet">
-            Placa po satu :{" "}
-            <p style={{ color: "#F5CD00", display: "inline" }}>{retrivedPay}</p>{" "}
-          </div>
-          <br></br>
-          <button onClick={goBack}> Nazad</button>
-          <button onClick={changeSallary}>Promijeni placu za {cur}</button>{" "}
-        </>
-      ) : (
-        <>
-          <input
-            type="number"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            className="inputField"
-            name="Placa po satu"
-            placeholder="Placa po satu"
-            value={pay}
-            onChange={payMent}
-            style={{ display: "block" }}
-            onKeyDown={(evt) =>
-              ["e", "E", "+", "-", "."].includes(evt.key) &&
-              evt.preventDefault()
-            }
-          />
-          <button onClick={goBack}> Nazad</button>
-          <button onClick={savePay}>Spremi</button>
-        </>
-      )}
-    </div>
+              Nazad
+            </button>
+            <button onClick={changeSallary} className="calcButton">
+              Promijeni plaću za {cur}
+            </button>{" "}
+          </>
+        ) : (
+          <>
+            <input
+              type="number"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              className="inputField"
+              name="Placa po satu"
+              placeholder="Placa po satu"
+              value={pay}
+              onChange={payMent}
+              style={{ display: "block" }}
+              onKeyDown={(evt) =>
+                ["e", "E", "+", "-", "."].includes(evt.key) &&
+                evt.preventDefault()
+              }
+            />
+            <div className="bContainer">
+              <button onClick={savePay} className="calcButton2">
+                Spremi
+              </button>
+              <button onClick={goBack} className="calcButton2">
+                {" "}
+                Nazad
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
